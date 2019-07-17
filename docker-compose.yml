@@ -1,0 +1,11 @@
+version: '3'
+services:
+  hyperparameter-optimization:
+    build: .
+    image: hyperparameter-optimization
+    volumes:
+      - ./:/hyperparameter-optimization
+    ports:
+      - "8888:8888"
+    working_dir: /hyperparameter-optimization
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
